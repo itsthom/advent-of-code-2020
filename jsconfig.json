@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "es2020",
+    "target": "es2020",
+    "checkJs": true,
+    "jsx": "preserve",
+    "strictNullChecks": true,
+    "strictFunctionTypes": true
+  },
+  "exclude": [
+    ".yarn",
+    "**/node_modules/*",
+    ".pnp.js"
+  ]
+}
