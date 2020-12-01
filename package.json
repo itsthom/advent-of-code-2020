@@ -1,7 +1,7 @@
 {
   "name": "advent-of-code-2020",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "advent.js",
   "repository": "git@github.com:itsthom/advent-of-code-2020.git",
   "author": "tom gleghorn",
   "license": "MIT",
@@ -16,7 +16,7 @@
     }
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "node advent.js",
     "test": "eslint . ; jest",
     "fix": "eslint . --fix"
   },
@@ -31,6 +31,6 @@
     "jest": "^26.6.3"
   },
   "dependencies": {
-    "global": "^4.4.0"
+    "commander": "^6.2.0"
   }
 }

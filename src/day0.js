@@ -5,10 +5,13 @@ function fuelRequired (mass) {
 }
 
 function totalFuelRequired (input) {
-  console.log(input)
   return readInput(input)
     .map(x => fuelRequired(parseInt(x, 10)))
     .reduce((acc, current) => acc + current)
 }
 
-export { fuelRequired, totalFuelRequired }
+function solution () {
+  return totalFuelRequired('day0.txt')
+}
+
+export { fuelRequired, totalFuelRequired, solution }

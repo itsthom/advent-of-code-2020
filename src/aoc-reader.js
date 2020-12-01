@@ -1,7 +1,9 @@
 import { readFileSync } from 'fs'
+import * as path from 'path'
 
 function readInput (file) {
-  return readFileSync(file, 'utf-8')
+  const input = path.resolve(`./input/${file}`)
+  return readFileSync(input, 'utf-8')
     .split('\n')
     .filter(x => x.length > 0)
 }
