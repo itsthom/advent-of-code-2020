@@ -9,8 +9,20 @@ function search (sortedInput) {
         continue
       } else if (sum > 2020) {
         break
-      } else {
-        return sortedInput[lilIndex] * sortedInput[bigIndex]
+      }
+      return sortedInput[lilIndex] * sortedInput[bigIndex]
+    }
+  }
+}
+
+function search2 (input) {
+  for (let i = 0; i < input.length; i++) {
+    for (let j = i + 1; j < input.length; j++) {
+      for (let k = j + 1; k < input.length; k++) {
+        const sum = input[i] + input[j] + input[k]
+        if (sum === 2020) {
+          return input[i] * input[j] * input[k]
+        }
       }
     }
   }
@@ -23,7 +35,11 @@ function transformInput () {
 }
 
 function solution () {
-  return search(transformInput())
+  const input = transformInput()
+  return {
+    part1: search(input),
+    part2: search2(input)
+  }
 }
 
-export { search, solution }
+export { search, search2, solution }

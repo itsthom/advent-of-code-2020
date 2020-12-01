@@ -11,7 +11,10 @@ function totalFuelRequired (input) {
 }
 
 function solution () {
-  return totalFuelRequired('day0.txt')
+  return {
+    part1: totalFuelRequired('day0.txt'),
+    part2: '???'
+  }
 }
 
 export { fuelRequired, totalFuelRequired, solution }

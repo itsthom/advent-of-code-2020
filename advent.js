@@ -15,8 +15,10 @@ function runSolution (index) {
   return solutions[index]()
 }
 
+// TODO: ooooo let's get colored output
 function printSolution (index) {
-  console.log(`Day ${index} solution: ${runSolution(index)}`)
+  const solution = runSolution(index)
+  console.log(`\nDAY ${index} SOLUTIONS\n  Part 1: ${solution.part1}\n  Part 2: ${solution.part2}`)
 }
 program
   .option('-d, --day <number>', 'run solution for a specific day', parseInt)
