@@ -49,8 +49,7 @@ function printSolution (day, solution) {
   }
   return `${chalk.blue.bold.underline(`DAY ${day}`)}
   ${chalk.yellow('Part 1:')} ${solution.part1 === '???' ? chalk.gray(solution.part1) : chalk.green(solution.part1)}
-  ${chalk.yellow('Part 2:')} ${solution.part2 === '???' ? chalk.gray(solution.part2) : chalk.green(solution.part2)}
-  `
+  ${chalk.yellow('Part 2:')} ${solution.part2 === '???' ? chalk.gray(solution.part2) : chalk.green(solution.part2)}`
 }
 
 program
@@ -64,4 +63,4 @@ const result = program.day === undefined
     ? `${chalk.red.bold('!!!')} 🤔 The day you entered (${chalk.blue(program.day)}) doesn't make sense to me`
     : printSolution(program.day, runSolution(program.day))
 
-console.log(`\n${result}`)
+console.log(`\n${result}\n`)
