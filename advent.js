@@ -1,4 +1,5 @@
-import * as day0 from './src/day0.js'
+import { solution as day0 } from './src/day0.js'
+import { solution as day1 } from './src/day1.js'
 
 import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
@@ -6,7 +7,8 @@ const require = createRequire(import.meta.url)
 const program = require('commander').program
 
 const solutions = [
-  day0.solution
+  day0,
+  day1
 ]
 
 function runSolution (index) {
