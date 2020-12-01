@@ -2,6 +2,9 @@
   "name": "advent-of-code-2020",
   "version": "1.0.0",
   "main": "advent.js",
+  "bin": {
+    "advent": "advent.js"
+  },
   "repository": "git@github.com:itsthom/advent-of-code-2020.git",
   "author": "tom gleghorn",
   "license": "MIT",
@@ -31,6 +34,7 @@
     "jest": "^26.6.3"
   },
   "dependencies": {
+    "chalk": "^4.1.0",
     "commander": "^6.2.0"
   }
 }
