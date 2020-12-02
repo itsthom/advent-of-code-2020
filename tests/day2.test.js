@@ -24,8 +24,28 @@ describe('function: isValidPassword', () => {
   })
 })
 
-describe('function: countValidPasswords', () => {
+describe('count valid passwords', () => {
   test('test input', () => {
-    expect(d2.countValidPasswords(testInput)).toBe(2)
+    expect(testInput.filter(d2.isValidPassword).length).toBe(2)
+  })
+})
+
+describe('function: isValidPassword2', () => {
+  test('input 1', () => {
+    expect(d2.isValidPassword2(testInput[0])).toBe(true)
+  })
+
+  test('input 2', () => {
+    expect(d2.isValidPassword2(testInput[1])).toBe(false)
+  })
+
+  test('input 3', () => {
+    expect(d2.isValidPassword2(testInput[2])).toBe(false)
+  })
+})
+
+describe('count valid passwords part 2', () => {
+  test('test input', () => {
+    expect(testInput.filter(d2.isValidPassword2).length).toBe(1)
   })
 })
