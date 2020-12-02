@@ -1,4 +1,4 @@
-import { search, search2 } from '../src/day01.js'
+import { search, search2 } from '../src/day1.js'
 
 describe('d1 function: search', () => {
   test('With Test Input', () => {

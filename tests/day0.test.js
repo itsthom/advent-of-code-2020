@@ -1,4 +1,4 @@
-import { fuelRequired } from '../src/day00.js'
+import { fuelRequired } from '../src/day0.js'
 
 describe('d0 function: fuelRequired', () => {
   test('For a mass of 12', () => {

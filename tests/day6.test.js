@@ -1,4 +1,4 @@
-import { solution } from '../src/day08.js'
+import { solution } from '../src/day6.js'
 
 describe('something', () => {
   test('should happen!', () => {
