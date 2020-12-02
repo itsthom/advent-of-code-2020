@@ -3,7 +3,7 @@ import { readInput } from './aoc-reader.js'
 function isValidPassword (str) {
   const parsed = str.match(/(?<min>\d+)-(?<max>\d+) (?<required>\w+): (?<password>.*)/).groups
   const matched = (parsed.password.match(RegExp(parsed.required, 'g')) || []).length
-  return matched >= parseInt(parsed.min) && matched <= parseInt(parsed.max)
+  return matched >= parsed.min && matched <= parsed.max
 }
 
 function isValidPassword2 (str) {
