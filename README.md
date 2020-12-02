@@ -11,25 +11,20 @@ yarn install
 
 Run all the stuff in index (all solutions from every day) with:
 ```sh
-yarn start
+yarn advent
 ```
 
 To Run solutions for a specific day do:
 ```sh
-yarn start -d <number>
+yarn advent -d <number>
 ```
 
-You can probably also figure out how to install the package globally so you can `advent [args]` instead of `yarn start [args]` 🤷🏻
+You can probably also figure out how to install the package globally so you can `advent [args]` instead of `yarn advent [args]` 🤷🏻
 ## Tests?
 
-Tests use jest, linter is ESLint with [Javascript Standard](https://standardjs.com/index.html) rules.
+Tests use [Jest](https://jestjs.io/docs/en/getting-started.html), linter is ESLint with [Javascript Standard](https://standardjs.com/index.html) rules.
 
-To lint and test everything:
-```sh
-yarn test
-```
-
-To use either CLI individually for more focus you can run them through yarn:
+To use either CLI individually you can run them through yarn:
 ```sh
 # lint a file
 yarn eslint advent.js
@@ -45,4 +40,19 @@ yarn jest day1.t
 
 # run tests and generate coverage report like a nerd
 yarn jest --coverage
+
+# run jest in watch mode (runs related tests on file change)
+yarn jest --watch
+```
+
+Helpful yarn scripts:
+```sh
+# lint and test everything
+yarn test
+
+# eslint-watch (lint on file change, only runs most recent file, hit enter to run everything)
+yarn watch-lint
+
+# alias for yarn jest --watch
+yarn watch-test
 ```
