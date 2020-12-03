@@ -1,7 +1,21 @@
-import { solution } from '../src/day3.js'
+import * as d3 from '../src/day3.js'
 
-describe('something', () => {
-  test('should happen!', () => {
-    expect(solution().part1).toBe('???')
+const testInput = [
+  '..##.......',
+  '#...#...#..',
+  '.#....#..#.',
+  '..#.#...#.#',
+  '.#...##..#.',
+  '..#.##.....',
+  '.#.#.#....#',
+  '.#........#',
+  '#.##...#...',
+  '#...##....#',
+  '.#..#...#.#'
+]
+
+describe('function: sumCollisions', () => {
+  test('with test input', () => {
+    expect(testInput.reduce(d3.collisionReducer, 0)).toBe(7)
   })
 })
