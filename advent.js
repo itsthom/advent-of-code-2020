@@ -28,7 +28,6 @@ import { solution as day25 } from './src/day25.js'
 // yarn and node's native ESM support don't quite play nice yet :(
 import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
-// @ts-ignore
 const chalk = require('chalk')
 // @ts-ignore
 const program = require('commander').program
