@@ -12,7 +12,12 @@ function passportHasRequiredFields (str) {
     'pid'
   ].every(x => passportObj[x])
 }
-
+/**
+ * 265 total
+ * current guess is 119. it is too high. meaning I should be rejecting MORE
+ * so look at the ones that weren't rejected first
+ * @param {*} str
+ */
 function passportIsValid (str) {
   const passportObj = passportStringToObject(str)
   return [
@@ -20,9 +25,9 @@ function passportIsValid (str) {
     { name: 'iyr', validator: x => x >= '2010' && x <= '2020' },
     { name: 'eyr', validator: x => x >= '2020' && x <= '2030' },
     { name: 'hgt', validator: x => (x >= '150cm' && x <= '193cm') || (x >= '59in' && x <= '76in') },
-    { name: 'hcl', validator: x => x.match(/#[\da-f]{6}/) },
-    { name: 'ecl', validator: x => x.match(/amb|blu|brn|gry|grn|hzl|oth/) },
-    { name: 'pid', validator: x => x.match(/\d{9}/) }
+    { name: 'hcl', validator: x => x.match(/^#[\da-f]{6}$/) },
+    { name: 'ecl', validator: x => x.match(/^(amb|blu|brn|gry|grn|hzl|oth)$/) },
+    { name: 'pid', validator: x => x.match(/^\d{9}$/) }
   ].every(field => passportObj[field.name] && field.validator(passportObj[field.name]))
 }
 
