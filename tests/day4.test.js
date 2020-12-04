@@ -9,19 +9,23 @@ const testInput = [
 
 describe('function: passportHasRequiredFields', () => {
   test('str1', () => {
-    expect(d4.passportHasRequiredFields(testInput[0])).toBe(true)
+    const p = d4.passportStringToObject(testInput[0])
+    expect(d4.passportHasRequiredFields(p)).toBe(true)
   })
 
   test('str2', () => {
-    expect(d4.passportHasRequiredFields(testInput[1])).toBe(false)
+    const p = d4.passportStringToObject(testInput[1])
+    expect(d4.passportHasRequiredFields(p)).toBe(false)
   })
 
   test('str3', () => {
-    expect(d4.passportHasRequiredFields(testInput[2])).toBe(true)
+    const p = d4.passportStringToObject(testInput[2])
+    expect(d4.passportHasRequiredFields(p)).toBe(true)
   })
 
   test('str4', () => {
-    expect(d4.passportHasRequiredFields(testInput[3])).toBe(false)
+    const p = d4.passportStringToObject(testInput[3])
+    expect(d4.passportHasRequiredFields(p)).toBe(false)
   })
 })
 
@@ -42,13 +46,23 @@ describe('function: passportIsValid', () => {
 
   valid.forEach((x) => {
     test(x, () => {
-      expect(d4.passportIsValid(x)).toBe(true)
+      const p = d4.passportStringToObject(x)
+      expect(d4.passportIsValid(p)).toBe(true)
     })
   })
 
   invalid.forEach((x) => {
     test(x, () => {
-      expect(d4.passportIsValid(x)).toBe(false)
+      const p = d4.passportStringToObject(x)
+      expect(d4.passportIsValid(p)).toBe(false)
     })
+  })
+})
+
+describe('function: solution', () => {
+  test('the answers with my input', () => {
+    const sol = d4.solution()
+    expect(sol.part1).toBe(200)
+    expect(sol.part2).toBe(116)
   })
 })
