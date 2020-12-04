@@ -20,15 +20,15 @@ const passportFields = [
   { name: 'pid', validator: x => x.match(/^\d{9}$/) }
 ]
 
-function passportHasRequiredFields(passport) {
+function passportHasRequiredFields (passport) {
   return passportFields.every(field => passport[field.name])
 }
 
-function passportIsValid(passport) {
+function passportIsValid (passport) {
   return passportFields.every(field => field.validator(passport[field.name]))
 }
 
-function passportStringToObject(str) {
+function passportStringToObject (str) {
   return str.split(/\s+/)
     .reduce((obj, kvp) => {
       const [key, val] = kvp.split(':')
@@ -37,7 +37,7 @@ function passportStringToObject(str) {
     }, {})
 }
 
-function solution() {
+function solution () {
   const passportsWithAllRequiredFields = readInput('day4.txt', '\n\n')
     .map(passportStringToObject)
     .filter(passportHasRequiredFields)
