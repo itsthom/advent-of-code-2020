@@ -24,7 +24,7 @@ function passportIsValid (str) {
     { name: 'byr', validator: x => x >= '1920' && x <= '2002' },
     { name: 'iyr', validator: x => x >= '2010' && x <= '2020' },
     { name: 'eyr', validator: x => x >= '2020' && x <= '2030' },
-    { name: 'hgt', validator: x => (x >= '150cm' && x <= '193cm') || (x >= '59in' && x <= '76in') },
+    { name: 'hgt', validator: x => x.endsWith('cm') ? (x >= '150cm' && x <= '193cm') : x.endsWith('in') ? (x >= '59in' && x <= '76in') : false },
     { name: 'hcl', validator: x => x.match(/^#[\da-f]{6}$/) },
     { name: 'ecl', validator: x => x.match(/^(amb|blu|brn|gry|grn|hzl|oth)$/) },
     { name: 'pid', validator: x => x.match(/^\d{9}$/) }
@@ -39,7 +39,6 @@ function passportStringToObject (str) {
       return obj
     }, {})
 }
-
 function solution () {
   const input = readInput('day4.txt', '\n\n')
   return {
@@ -48,4 +47,4 @@ function solution () {
   }
 }
 
-export { passportHasRequiredFields, passportIsValid, solution }
+export { passportStringToObject, passportHasRequiredFields, passportIsValid, solution }
