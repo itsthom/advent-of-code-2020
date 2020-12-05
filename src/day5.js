@@ -15,13 +15,21 @@ function calculateSeatId (str) {
   return row * 8 + col
 }
 
+function findMissingSeatId (sortedIds) {
+  return sortedIds.find((x, index, arr) => {
+    return index !== 0 && x !== (arr[index - 1] + 1)
+  }) - 1
+}
+
 function solution () {
   const seatIds = readInput('day5.txt')
     .map(calculateSeatId)
+    .sort((a, b) => a - b)
+  const missingId = findMissingSeatId(seatIds)
   return {
-    part1: seatIds.reduce((prev, curr) => Math.max(prev, curr)),
-    part2: '???'
+    part1: seatIds.pop(),
+    part2: missingId
   }
 }
 
-export { calculateSeatId, solution }
+export { calculateSeatId, findMissingSeatId, solution }
