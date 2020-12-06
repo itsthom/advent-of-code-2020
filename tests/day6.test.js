@@ -27,6 +27,6 @@ describe('function: countUnanimousYesResponses', () => {
 describe('function: solution', () => {
   test('with my input', () => {
     expect(d6.solution().part1).toBe(6742)
-    expect(d6.solution().part2).toBeGreaterThan(3441)
+    expect(d6.solution().part2).toBe(3447)
   })
 })

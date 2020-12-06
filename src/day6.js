@@ -2,19 +2,17 @@ import { readInput } from './aoc-reader.js'
 
 const questions = 'abcdefghijklmnopqrstuvwxyz'.split('')
 
+function characterCounter (str) {
+  return (char) => (str.match(RegExp(char, 'g')) || []).length
+}
+
 function countYesResponses (str) {
-  return questions
-    .map(x => (str.match(RegExp(x, 'g')) || []).length)
-    .filter(x => x > 0)
-    .length
+  return questions.map(characterCounter(str)).filter(x => x > 0).length
 }
 
 function countUnanimousYesResponses (str) {
-  const groupSize = str.split('\n').length
-  return questions
-    .map(x => (str.match(RegExp(x, 'g')) || []).length)
-    .filter(x => x === groupSize)
-    .length
+  const groupSize = str.split('\n').filter(x => x).length
+  return questions.map(characterCounter(str)).filter(x => x === groupSize).length
 }
 
 function solution () {
