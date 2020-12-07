@@ -1,4 +1,5 @@
-import { fuelRequired } from '../src/day0.js'
+import { solutions } from '../allTheModules.js'
+const fuelRequired = solutions.day0.mod.fuelRequired
 
 describe('d0 function: fuelRequired', () => {
   test('For a mass of 12', () => {

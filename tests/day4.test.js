@@ -1,4 +1,5 @@
-import * as d4 from '../src/day4.js'
+import { solutions, readInput } from '../allTheModules.js'
+const d4 = solutions.day4.mod
 
 const testInput = [
   'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\nbyr:1937 iyr:2017 cid:147 hgt:183cm',
@@ -61,7 +62,7 @@ describe('function: passportIsValid', () => {
 
 describe('function: solution', () => {
   test('the answers with my input', () => {
-    const sol = d4.solution()
+    const sol = d4.solution(readInput(solutions.day4.input))
     expect(sol.part1).toBe(200)
     expect(sol.part2).toBe(116)
   })

@@ -1,5 +1,3 @@
-import { readInput } from './aoc-reader.js'
-
 function reducerProducer (rShift, dShift) {
   return (total, row, index) => {
     if (index % dShift !== 0) {
@@ -14,14 +12,14 @@ function sumCollisions (input, rShift, dShift) {
   return input.reduce(reducerProducer(rShift, dShift), 0)
 }
 
-function solution () {
-  const input = readInput('day3.txt')
+function solution (input) {
+  const slopeMap = input.split('\n').filter(x => x)
   const collisions = [
-    sumCollisions(input, 1, 1),
-    sumCollisions(input, 3, 1),
-    sumCollisions(input, 5, 1),
-    sumCollisions(input, 7, 1),
-    sumCollisions(input, 1, 2)
+    sumCollisions(slopeMap, 1, 1),
+    sumCollisions(slopeMap, 3, 1),
+    sumCollisions(slopeMap, 5, 1),
+    sumCollisions(slopeMap, 7, 1),
+    sumCollisions(slopeMap, 1, 2)
   ]
   return {
     part1: collisions[1],

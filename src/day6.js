@@ -1,5 +1,3 @@
-import { readInput } from './aoc-reader.js'
-
 const questions = 'abcdefghijklmnopqrstuvwxyz'.split('')
 
 function characterCounter (str) {
@@ -15,11 +13,11 @@ function countUnanimousYesResponses (str) {
   return questions.map(characterCounter(str)).filter(x => x === groupSize).length
 }
 
-function solution () {
-  const input = readInput('day6.txt', '\n\n')
+function solution (input) {
+  const groups = input.split('\n\n')
   return {
-    part1: input.map(countYesResponses).reduce((a, b) => a + b),
-    part2: input.map(countUnanimousYesResponses).reduce((a, b) => a + b)
+    part1: groups.map(countYesResponses).reduce((a, b) => a + b),
+    part2: groups.map(countUnanimousYesResponses).reduce((a, b) => a + b)
   }
 }
 

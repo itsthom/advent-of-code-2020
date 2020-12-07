@@ -1,5 +1,3 @@
-import { readInput } from './aoc-reader.js'
-
 function search (sortedInput) {
   let lilIndex = 0
   for (let bigIndex = sortedInput.length - 1; bigIndex > lilIndex; bigIndex--) {
@@ -28,17 +26,17 @@ function search2 (input) {
   }
 }
 
-function transformInput () {
-  return readInput('day1.txt')
+function transformInput (input) {
+  return input.split('\n').filter(x => x)
     .map(x => parseInt(x, 10))
     .sort((a, b) => a - b)
 }
 
-function solution () {
-  const input = transformInput()
+function solution (input) {
+  const parsed = transformInput(input)
   return {
-    part1: search(input),
-    part2: search2(input)
+    part1: search(parsed),
+    part2: search2(parsed)
   }
 }
 

@@ -1,5 +1,3 @@
-import { readInput } from './aoc-reader.js'
-
 function bspFind (str, start, end) {
   if (str.length === 0) return start
   const [directive, ...rest] = str
@@ -21,8 +19,9 @@ function findMissingSeatId (sortedIds) {
   }) - 1
 }
 
-function solution () {
-  const seatIds = readInput('day5.txt')
+function solution (input) {
+  const seatIds = input.split('\n')
+    .filter(x => x.length > 0)
     .map(calculateSeatId)
     .sort((a, b) => a - b)
   const missingId = findMissingSeatId(seatIds)

@@ -1,5 +1,3 @@
-import { readInput } from './aoc-reader.js'
-
 function calculateSeatId (str) {
   const asBinaryStr = str.split('').map(x => 'BR'.includes(x) ? '1' : '0').join('')
   const row = parseInt(asBinaryStr.substring(0, 7), 2)
@@ -13,8 +11,9 @@ function findMissingSeatId (sortedIds) {
   }) - 1
 }
 
-function solution () {
-  const seatIds = readInput('day5.txt')
+function solution (input) {
+  const seatIds = input.split('\n')
+    .filter(x => x.length > 0)
     .map(calculateSeatId)
     .sort((a, b) => a - b)
   const missingId = findMissingSeatId(seatIds)

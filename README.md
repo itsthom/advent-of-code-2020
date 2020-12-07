@@ -4,22 +4,26 @@ Let's try this again! https://adventofcode.com
 
 ## How Do?
 
-Install dependencies using:
+### Install dependencies using:
 ```sh
 yarn install
 ```
 
-Run all the stuff in index (all solutions from every day) with:
+### Then You Can:
 ```sh
+Usage: advent <command>
+
+~~ Your friendly neighborhood Advent of Code 2020 runner ~~
+
+Commands:
+  all             Run solution for every day
+  day <day>       Run solution for a specific day
+  interactive     Start a REPL session with all the modules loaded
+  help [command]  display help for command
 yarn advent
 ```
 
-To Run solutions for a specific day do:
-```sh
-yarn advent -d <number>
-```
-
-You can probably also figure out how to install the package globally so you can `advent [args]` instead of `yarn advent [args]` 🤷🏻
+You can probably also figure out how to install the package globally so you can `advent` instead of `yarn advent` 🤷🏻
 ## Tests?
 
 Tests use [Jest](https://jestjs.io/docs/en/getting-started.html), linter is ESLint with [Javascript Standard](https://standardjs.com/index.html) rules.

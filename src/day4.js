@@ -1,5 +1,3 @@
-import { readInput } from './aoc-reader.js'
-
 const passportFields = [
   { name: 'byr', validator: x => x >= 1920 && x <= 2002 },
   { name: 'iyr', validator: x => x >= 2010 && x <= 2020 },
@@ -37,8 +35,9 @@ function passportStringToObject (str) {
     }, {})
 }
 
-function solution () {
-  const passportsWithAllRequiredFields = readInput('day4.txt', '\n\n')
+function solution (input) {
+  const passports = input.split('\n\n')
+  const passportsWithAllRequiredFields = passports
     .map(passportStringToObject)
     .filter(passportHasRequiredFields)
   return {

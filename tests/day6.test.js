@@ -1,10 +1,11 @@
-import * as d6 from '../src/day6.js'
+import { solutions, readInput } from '../allTheModules.js'
+const d6 = solutions.day6.mod
 
-const input = ['abc', 'a\nb\nc', 'ab\nac', 'a\na\na\na', 'b']
+const testInput = ['abc', 'a\nb\nc', 'ab\nac', 'a\na\na\na', 'b']
 
 describe('function: countYesResponses', () => {
   test('sample input', () => {
-    const result = input.map(d6.countYesResponses)
+    const result = testInput.map(d6.countYesResponses)
     expect(result[0]).toBe(3)
     expect(result[1]).toBe(3)
     expect(result[2]).toBe(3)
@@ -15,7 +16,7 @@ describe('function: countYesResponses', () => {
 
 describe('function: countUnanimousYesResponses', () => {
   test('sample input', () => {
-    const result = input.map(d6.countUnanimousYesResponses)
+    const result = testInput.map(d6.countUnanimousYesResponses)
     expect(result[0]).toBe(3)
     expect(result[1]).toBe(0)
     expect(result[2]).toBe(1)
@@ -26,7 +27,8 @@ describe('function: countUnanimousYesResponses', () => {
 
 describe('function: solution', () => {
   test('with my input', () => {
-    expect(d6.solution().part1).toBe(6742)
-    expect(d6.solution().part2).toBe(3447)
+    const input = readInput(solutions.day6.input)
+    expect(d6.solution(input).part1).toBe(6742)
+    expect(d6.solution(input).part2).toBe(3447)
   })
 })

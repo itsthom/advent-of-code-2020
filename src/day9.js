@@ -1,4 +1,4 @@
-function solution () {
+function solution (input) {
   return {
     part1: '???',
     part2: '???'

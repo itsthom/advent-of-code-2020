@@ -1,4 +1,5 @@
-import * as d5 from '../src/day5.js'
+import { solutions, readInput } from '../allTheModules.js'
+const d5 = solutions.day5.mod
 
 const input = [
   { str: 'FBFBBFFRLR', id: 357 },
@@ -32,7 +33,7 @@ describe('function: findMissingSeatId', () => {
 
 describe('function: solution', () => {
   test('with my test input', () => {
-    const sol = d5.solution()
+    const sol = d5.solution(readInput(solutions.day5.input))
     expect(sol.part1).toBe(842)
     expect(sol.part2).toBe(617)
   })

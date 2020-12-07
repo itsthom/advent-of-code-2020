@@ -1,18 +1,16 @@
-import { readInput } from './aoc-reader.js'
-
 function fuelRequired (mass) {
   return Math.floor(mass / 3) - 2
 }
 
 function totalFuelRequired (input) {
-  return readInput(input)
+  return input.split('\n').filter(x => x.length > 0)
     .map(x => fuelRequired(parseInt(x, 10)))
     .reduce((acc, current) => acc + current)
 }
 
-function solution () {
+function solution (input) {
   return {
-    part1: totalFuelRequired('day0.txt'),
+    part1: totalFuelRequired(input),
     part2: '???'
   }
 }

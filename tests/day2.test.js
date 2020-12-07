@@ -1,4 +1,5 @@
-import * as d2 from '../src/day2.js'
+import { solutions, readInput } from '../allTheModules.js'
+const d2 = solutions.day2.mod
 
 const testInput = [
   '1-3 a: abcde',
@@ -47,5 +48,13 @@ describe('function: isValidPassword2', () => {
 describe('count valid passwords part 2', () => {
   test('test input', () => {
     expect(testInput.filter(d2.isValidPassword2).length).toBe(1)
+  })
+})
+
+describe('function: solution', () => {
+  test('with my input', () => {
+    const input = readInput(solutions.day2.input)
+    expect(d2.solution(input).part1).toBe(398)
+    expect(d2.solution(input).part2).toBe(562)
   })
 })
