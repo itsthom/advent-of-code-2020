@@ -1,16 +1,17 @@
 function findGold (ruleMap, color) {
-  const rules = ruleMap.get(color)
-  return color === 'shiny gold' || rules.some(r => findGold(ruleMap, r.color))
+  return color === 'shiny gold' || ruleMap.get(color).some(r => findGold(ruleMap, r.color))
 }
 
 function countBags (ruleMap, color) {
-  const rules = ruleMap.get(color)
-  return 1 + rules.reduce((sum, rule) => sum + rule.qty * countBags(ruleMap, rule.color), 0)
+  return 1 + ruleMap.get(color).reduce((sum, rule) => sum + rule.qty * countBags(ruleMap, rule.color), 0)
 }
 
 function parseBagRules (str) {
   const [color, ...rules] = str.replace(' bags contain ', ', ').replace('.', '').split(', ')
-  return { color: color, rules: rules.map(x => x.match(/^(?<qty>\d+) (?<color>.+) bag/)?.groups).filter(x => x) }
+  return {
+    color: color,
+    rules: rules.map(x => x.match(/^(?<qty>\d+) (?<color>.+) bag/)?.groups).filter(x => x)
+  }
 }
 
 function toMap (input) {
@@ -27,4 +28,4 @@ function solution (input) {
   }
 }
 
-export { toMap, findGold, parseBagRules, solution }
+export { solution }
