@@ -10,8 +10,8 @@ yarn install
 ```
 
 ### Then You Can:
-```sh
-Usage: advent <command>
+```
+Usage: yarn advent <command>
 
 ~~ Your friendly neighborhood Advent of Code 2020 runner ~~
 
@@ -20,7 +20,6 @@ Commands:
   day <day>       Run solution for a specific day
   interactive     Start a REPL session with all the modules loaded
   help [command]  display help for command
-yarn advent
 ```
 
 You can probably also figure out how to install the package globally so you can `advent` instead of `yarn advent` 🤷🏻
