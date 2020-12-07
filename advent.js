@@ -22,7 +22,7 @@ function printSolution (day) {
 
 function replTime () {
   const replServer = repl.start({
-    prompt: `${chalk.red.bold('\n🎅 AOC')} ${chalk.green.bold('>')} `,
+    prompt: `${chalk.red.bold('\n🎅!')} ${chalk.green.bold('>')} `,
     useColors: true,
     useGlobal: true
   })
@@ -32,7 +32,7 @@ function replTime () {
     replServer.context[k] = s.mod
   }
   replServer.on('exit', () => {
-    console.log(chalk.green.bold('See you soon!'))
+    console.log(chalk.green.bold('\n ☃️  ⛄️ ☃️  See you soon!️ ☃️  ⛄️ ☃️\n'))
     process.exit()
   })
 }
