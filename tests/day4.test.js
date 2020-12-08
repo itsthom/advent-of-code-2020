@@ -1,5 +1,4 @@
-import { solutions, readInput } from '../allTheModules.js'
-const d4 = solutions.day4.mod
+import { day4, readInput } from '../allTheModules.js'
 
 const testInput = [
   'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\nbyr:1937 iyr:2017 cid:147 hgt:183cm',
@@ -10,23 +9,23 @@ const testInput = [
 
 describe('function: passportHasRequiredFields', () => {
   test('str1', () => {
-    const p = d4.passportStringToObject(testInput[0])
-    expect(d4.passportHasRequiredFields(p)).toBe(true)
+    const p = day4.mod.passportStringToObject(testInput[0])
+    expect(day4.mod.passportHasRequiredFields(p)).toBe(true)
   })
 
   test('str2', () => {
-    const p = d4.passportStringToObject(testInput[1])
-    expect(d4.passportHasRequiredFields(p)).toBe(false)
+    const p = day4.mod.passportStringToObject(testInput[1])
+    expect(day4.mod.passportHasRequiredFields(p)).toBe(false)
   })
 
   test('str3', () => {
-    const p = d4.passportStringToObject(testInput[2])
-    expect(d4.passportHasRequiredFields(p)).toBe(true)
+    const p = day4.mod.passportStringToObject(testInput[2])
+    expect(day4.mod.passportHasRequiredFields(p)).toBe(true)
   })
 
   test('str4', () => {
-    const p = d4.passportStringToObject(testInput[3])
-    expect(d4.passportHasRequiredFields(p)).toBe(false)
+    const p = day4.mod.passportStringToObject(testInput[3])
+    expect(day4.mod.passportHasRequiredFields(p)).toBe(false)
   })
 })
 
@@ -47,22 +46,22 @@ describe('function: passportIsValid', () => {
 
   valid.forEach((x) => {
     test(x, () => {
-      const p = d4.passportStringToObject(x)
-      expect(d4.passportIsValid(p)).toBe(true)
+      const p = day4.mod.passportStringToObject(x)
+      expect(day4.mod.passportIsValid(p)).toBe(true)
     })
   })
 
   invalid.forEach((x) => {
     test(x, () => {
-      const p = d4.passportStringToObject(x)
-      expect(d4.passportIsValid(p)).toBe(false)
+      const p = day4.mod.passportStringToObject(x)
+      expect(day4.mod.passportIsValid(p)).toBe(false)
     })
   })
 })
 
 describe('function: solution', () => {
   test('the answers with my input', () => {
-    const sol = d4.solution(readInput(solutions.day4.input))
+    const sol = day4.mod.solution(readInput(day4.input))
     expect(sol.part1).toBe(200)
     expect(sol.part2).toBe(116)
   })

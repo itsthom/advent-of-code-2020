@@ -1,5 +1,4 @@
-import { solutions, readInput } from '../allTheModules.js'
-const { mod, input } = solutions.day8
+import { day8, readInput } from '../allTheModules.js'
 
 const testInput =
 `nop +0
@@ -14,7 +13,7 @@ acc +6`
 
 describe('function: solution', () => {
   describe('with test input', () => {
-    const solution = mod.solution(testInput)
+    const solution = day8.mod.solution(testInput)
     test('part1', () => {
       expect(solution.part1).toBe(5)
     })
@@ -24,7 +23,7 @@ describe('function: solution', () => {
   })
 
   describe('with real input', () => {
-    const solution = mod.solution(readInput(input))
+    const solution = day8.mod.solution(readInput(day8.input))
     test('part1', () => {
       expect(solution.part1).toBe(1610)
     })

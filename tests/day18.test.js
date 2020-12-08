@@ -1,10 +1,23 @@
-import { solutions, readInput } from '../allTheModules.js'
-const { mod, input } = solutions.day18
+import { day18, readInput } from '../allTheModules.js'
 
 describe('function: solution', () => {
-  test('given test input', () => {
-    const solution = mod.solution(readInput(input))
-    expect(solution.part1).toBe('???')
-    expect(solution.part2).toBe('???')
+  describe('with test input', () => {
+    const solution = day18.mod.solution('')
+    test('part1', () => {
+      expect(solution.part1).toBe('???')
+    })
+    test('part2', () => {
+      expect(solution.part2).toBe('???')
+    })
+  })
+
+  describe('with real input', () => {
+    const solution = day18.mod.solution(readInput(day18.input))
+    test('part1', () => {
+      expect(solution.part1).toBe('???')
+    })
+    test('part2', () => {
+      expect(solution.part2).toBe('???')
+    })
   })
 })
