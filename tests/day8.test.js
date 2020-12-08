@@ -1,4 +1,5 @@
-import { day8, readInput } from '../allTheModules.js'
+import * as day8 from '../src/day8.js'
+import { readInput } from '../reader.js'
 
 const testInput =
 `nop +0
@@ -13,7 +14,7 @@ acc +6`
 
 describe('function: solution', () => {
   describe('with test input', () => {
-    const solution = day8.mod.solution(testInput)
+    const solution = day8.solution(testInput)
     test('part1', () => {
       expect(solution.part1).toBe(5)
     })
@@ -23,7 +24,7 @@ describe('function: solution', () => {
   })
 
   describe('with real input', () => {
-    const solution = day8.mod.solution(readInput(day8.input))
+    const solution = day8.solution(readInput('day8.txt'))
     test('part1', () => {
       expect(solution.part1).toBe(1610)
     })

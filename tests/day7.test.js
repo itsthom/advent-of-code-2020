@@ -1,4 +1,5 @@
-import { day7, readInput } from '../allTheModules.js'
+import * as day7 from '../src/day7.js'
+import { readInput } from '../reader.js'
 
 const testInput1 =
 `light red bags contain 1 bright white bag, 2 muted yellow bags.
@@ -23,14 +24,14 @@ dark violet bags contain no other bags.`
 describe('function: solution', () => {
   describe('with test input', () => {
     test('part1', () => {
-      expect(day7.mod.solution(testInput1).part1).toBe(4)
+      expect(day7.solution(testInput1).part1).toBe(4)
     })
     test('part2', () => {
-      expect(day7.mod.solution(testInput2).part2).toBe(126)
+      expect(day7.solution(testInput2).part2).toBe(126)
     })
   })
   describe('with my input', () => {
-    const solution = day7.mod.solution(readInput(day7.input))
+    const solution = day7.solution(readInput('day7.txt'))
     test('part1', () => {
       expect(solution.part1).toBe(144)
     })

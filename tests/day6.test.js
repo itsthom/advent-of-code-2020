@@ -1,10 +1,11 @@
-import { day6, readInput } from '../allTheModules.js'
+import * as day6 from '../src/day6.js'
+import { readInput } from '../reader.js'
 
 const testInput = ['abc', 'a\nb\nc', 'ab\nac', 'a\na\na\na', 'b']
 
 describe('function: countYesResponses', () => {
   test('sample input', () => {
-    const result = testInput.map(day6.mod.countYesResponses)
+    const result = testInput.map(day6.countYesResponses)
     expect(result[0]).toBe(3)
     expect(result[1]).toBe(3)
     expect(result[2]).toBe(3)
@@ -15,7 +16,7 @@ describe('function: countYesResponses', () => {
 
 describe('function: countUnanimousYesResponses', () => {
   test('sample input', () => {
-    const result = testInput.map(day6.mod.countUnanimousYesResponses)
+    const result = testInput.map(day6.countUnanimousYesResponses)
     expect(result[0]).toBe(3)
     expect(result[1]).toBe(0)
     expect(result[2]).toBe(1)
@@ -26,7 +27,7 @@ describe('function: countUnanimousYesResponses', () => {
 
 describe('function: solution', () => {
   describe('with my input', () => {
-    const solution = day6.mod.solution(readInput(day6.input))
+    const solution = day6.solution(readInput('day6.txt'))
     test('part1', () => {
       expect(solution.part1).toBe(6742)
     })

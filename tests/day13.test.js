@@ -1,8 +1,9 @@
-import { day13, readInput } from '../allTheModules.js'
+import * as day13 from '../src/day13.js'
+import { readInput } from '../reader.js'
 
 describe('function: solution', () => {
   describe('with test input', () => {
-    const solution = day13.mod.solution('')
+    const solution = day13.solution('')
     test('part1', () => {
       expect(solution.part1).toBe('???')
     })
@@ -12,7 +13,7 @@ describe('function: solution', () => {
   })
 
   describe('with real input', () => {
-    const solution = day13.mod.solution(readInput(day13.input))
+    const solution = day13.solution(readInput('day13.txt'))
     test('part1', () => {
       expect(solution.part1).toBe('???')
     })
