@@ -23,6 +23,16 @@ describe('function: solution', () => {
     })
   })
 
+  describe('with garbage input', () => {
+    const solution = day8.solution('jmp +99\njmp +99\n')
+    test('part1', () => {
+      expect(solution.part1).toBe(0)
+    })
+    test('part2', () => {
+      expect(solution.part2).toBe(NaN)
+    })
+  })
+
   describe('with real input', () => {
     const solution = day8.solution(readInput('day8.txt'))
     test('part1', () => {

@@ -2,7 +2,7 @@ function execUntilLoopOrTerm (instructions) {
   let address = 0
   let accumulator = 0
   instructions.forEach(instr => (instr.visited = false))
-  while (!instructions[address].visited) {
+  while (instructions[address] && !instructions[address].visited) {
     instructions[address].visited = true
     switch (instructions[address].operation) {
       case 'acc':
