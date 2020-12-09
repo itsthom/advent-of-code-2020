@@ -1,6 +1,6 @@
 function checkSum (arr, sum) {
-  const pairs = arr.map((val, index) => arr.slice(index + 1).map(sub => [val, sub])).flat()
-  return pairs.some(pair => pair[0] + pair[1] === sum)
+  const pairs = arr.flatMap((x, index) => arr.slice(index + 1).map(y => [x, y]))
+  return pairs.some(([a, b]) => a + b === sum)
 }
 
 function findInvalidEntry (data, preambleLength) {
@@ -15,16 +15,19 @@ function findWeakness (data, invalidNumber) {
   for (let i = 0; i < data.length; i++) {
     for (let k = i + 1; k < data.length; k++) {
       const subArray = data.slice(i, k)
-      if (subArray.reduce((sum, curr) => sum + curr) === invalidNumber) {
-        const sorted = subArray.sort((a, b) => a - b)
-        return sorted.shift() + sorted.pop()
+      const sum = subArray.reduce((a, b) => a + b)
+      if (sum > invalidNumber) {
+        break
+      }
+      if (sum === invalidNumber) {
+        return Math.min(...subArray) + Math.max(...subArray)
       }
     }
   }
 }
 
 function solution (input, preambleLength = 25) {
-  const data = input.split('\n').map(str => parseInt(str, 10))
+  const data = input.split('\n').map(Number)
   const invalidNumber = findInvalidEntry(data, preambleLength)
   return {
     part1: invalidNumber,
