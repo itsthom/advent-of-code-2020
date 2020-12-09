@@ -26,11 +26,11 @@ const testInput =
 describe('function: validateXMASData', () => {
   test('with test input', () => {
     const input = testInput.split('\n').map(str => parseInt(str, 10))
-    expect(day9.validateXMASData(input, 5)).toBe(127)
+    expect(day9.findInvalidEntry(input, 5)).toBe(127)
   })
   test('with only good test input', () => {
     const input = testInput.split('\n').map(str => parseInt(str, 10)).slice(0, 13)
-    expect(day9.validateXMASData(input, 5)).toBe(true)
+    expect(day9.findInvalidEntry(input, 5)).toBe(undefined)
   })
 })
 

@@ -3,14 +3,12 @@ function checkSum (arr, sum) {
   return pairs.some(pair => pair[0] + pair[1] === sum)
 }
 
-function validateXMASData (data, preambleLength) {
+function findInvalidEntry (data, preambleLength) {
   for (let i = preambleLength; i < data.length; i++) {
-    const preamble = data.slice(i - preambleLength, i)
-    if (!checkSum(preamble, data[i])) {
+    if (!checkSum(data.slice(i - preambleLength, i), data[i])) {
       return data[i]
     }
   }
-  return true
 }
 
 function findWeakness (data, invalidNumber) {
@@ -19,7 +17,7 @@ function findWeakness (data, invalidNumber) {
       const subArray = data.slice(i, k)
       if (subArray.reduce((sum, curr) => sum + curr) === invalidNumber) {
         const sorted = subArray.sort((a, b) => a - b)
-        return sorted[0] + sorted[sorted.length - 1]
+        return sorted.shift() + sorted.pop()
       }
     }
   }
@@ -27,11 +25,11 @@ function findWeakness (data, invalidNumber) {
 
 function solution (input, preambleLength = 25) {
   const data = input.split('\n').map(str => parseInt(str, 10))
-  const invalidNumber = validateXMASData(data, preambleLength)
+  const invalidNumber = findInvalidEntry(data, preambleLength)
   return {
     part1: invalidNumber,
     part2: findWeakness(data, invalidNumber)
   }
 }
 
-export { checkSum, validateXMASData, solution }
+export { checkSum, findInvalidEntry, solution }
