@@ -28,6 +28,10 @@ describe('function: validateXMASData', () => {
     const input = testInput.split('\n').map(str => parseInt(str, 10))
     expect(day9.validateXMASData(input, 5)).toBe(127)
   })
+  test('with only good test input', () => {
+    const input = testInput.split('\n').map(str => parseInt(str, 10)).slice(0, 13)
+    expect(day9.validateXMASData(input, 5)).toBe(true)
+  })
 })
 
 describe('function: solution', () => {
@@ -36,9 +40,9 @@ describe('function: solution', () => {
     test('part1', () => {
       expect(solution.part1).toBe(127)
     })
-    // test('part2', () => {
-    //   expect(solution.part2).toBe('???')
-    // })
+    test('part2', () => {
+      expect(solution.part2).toBe(62)
+    })
   })
 
   describe('with real input', () => {
@@ -46,8 +50,8 @@ describe('function: solution', () => {
     test('part1', () => {
       expect(solution.part1).toBe(21806024)
     })
-    // test('part2', () => {
-    //   expect(solution.part2).toBe('???')
-    // })
+    test('part2', () => {
+      expect(solution.part2).toBe(2986195)
+    })
   })
 })
