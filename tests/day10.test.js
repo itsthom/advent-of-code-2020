@@ -54,7 +54,7 @@ describe('function: solution', () => {
       expect(solution.part1).toBe(35)
     })
     test('part2', () => {
-      expect(solution.part2).toBe('???')
+      expect(solution.part2).toBe(8)
     })
   })
 
@@ -64,17 +64,17 @@ describe('function: solution', () => {
       expect(solution.part1).toBe(220)
     })
     test('part2', () => {
-      expect(solution.part2).toBe('???')
+      expect(solution.part2).toBe(19208)
     })
   })
 
   describe('with real input', () => {
-    // const solution = day10.solution(readInput('day10.txt'))
-    // test('part1', () => {
-    //   expect(solution.part1).toBe(2046)
-    // })
-    // test('part2', () => {
-    //   expect(solution.part2).toBe('???')
-    // })
+    const solution = day10.solution(readInput('day10.txt'))
+    test('part1', () => {
+      expect(solution.part1).toBe(2046)
+    })
+    test('part2', () => {
+      expect(solution.part2).toBe('???')
+    })
   })
 })
