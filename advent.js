@@ -83,6 +83,7 @@ function replTime () {
     useGlobal: true
   })
 
+  replServer.context.readInput = readInput
   for (const k of solutionKeys) {
     const s = solutions[k]
     replServer.context[k] = s.mod
